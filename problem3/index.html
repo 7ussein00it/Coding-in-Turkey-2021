@@ -1,0 +1,59 @@
+<html>
+
+<body>
+    <h2>Fridge Items</h2>
+    <table>
+        <thead>
+            <td>
+                <b>Item</b>
+            </td>
+            <td>
+                <b>Count</b>
+            </td>
+            <td>
+                <b>Remove</b>
+            </td>
+        </thead>
+        <tbody id="table">
+            <tr>
+                <td>Cucumber</td>
+                <td>3</td>
+                <td><button onClick="remove(event)">X</button></td>
+            </tr>
+            <tr>
+                <td>Lettuce</td>
+                <td>5</td>
+                <td><button onClick="remove(event)">X</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <input id="item" type="text">
+    <button onclick="add()">Add</button>
+</body>
+<script>
+    function remove(event) {
+        var item = event.target.parentElement.parentElement.classList.add('remove')
+    }
+
+    function add(event) {
+        var item = document.getElementById('item').value;
+        var itemName = item.slice(0, item.search(' '));
+        var itemcount = item.slice(item.search(' '), item.length);
+
+        var table = document.getElementById('table');
+
+        table.innerHTML = table.innerHTML + '<tr><td>' + itemName + '</td><td>' + itemcount + '</td><td><button onClick="remove(event)">X</button></td></tr>';
+    }
+</script>
+<style>
+    td {
+        padding-right: 50px;
+    }
+    
+    .remove {
+        display: none;
+    }
+</style>
+
+</html>

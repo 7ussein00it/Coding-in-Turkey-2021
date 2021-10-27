@@ -1,0 +1,5 @@
+{
+    "fridge": { "apple": 4, "tomato": 6, "banana": 3, "orange": 1, "pepsi": 2, "bread": 5 },
+    "ingredients": { "bread": 2, "tomato": 1 }
+
+}
